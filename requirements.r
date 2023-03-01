@@ -5,3 +5,6 @@ install.packages("ggplot2")
 install.packages("skimr")
 install.packages("FactoMineR")
 install.packages("factoextra")
+
+install.packages("caret")
+install.packages("corrplot")
