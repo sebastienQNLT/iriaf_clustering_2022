@@ -63,20 +63,18 @@ fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
 fviz_contrib(res.pca, choice = "var", axes = 3, top = 10)
 fviz_contrib(res.pca, choice = "var", axes = 4, top = 10)
 fviz_contrib(res.pca, choice = "var", axes = 5, top = 10)
-
 fviz_contrib(res.pca, choice = "var", axes = 6, top = 10)
-fviz_contrib(res.pca, choice = "var", axes = 7, top = 10)
 
 #visualisation des axes 1 et 2
 fviz_pca_var(res.pca, col.var = "contrib", 
-             ggtheme = theme_minimal(),axes=c(1,3),
-             select.var = list(contrib = 15)
+             ggtheme = theme_minimal(),axes=c(1,2),
+             select.var = list(contrib = 10)
 )
 
 #graph des individus
 #axe 1 et 2
-fviz_pca_ind(res.pca, axes = c(1, 2),geom = "point",alpha.ind=.1) +theme_minimal()
-p<-fviz_pca_ind(res.pca, axes = c(1, 2),label = "none",habillage=as.factor(fifa_data$Role)) +theme_minimal()
+
+p<-fviz_pca_ind(res.pca, axes = c(1, 2),label = "none",habillage=as.factor(fifa_data$Role),alpha.ind=.8,addEllipses = TRUE) +theme_minimal()
 ggplotly(p)
-fviz_pca_ind(res.pca, axes = c(1, 3),label = "none",habillage=as.factor(fifa_data$Role),addEllipses = TRUE) +theme_minimal()
-fviz_pca_ind(res.pca, axes = c(2, 3),label = "none",habillage=as.factor(fifa_data$Role),addEllipses = TRUE) +theme_minimal()
+
+
